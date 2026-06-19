@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Trigger n8n Webhook
         run: |
-          curl -X POST "${{ secrets.N8N_WEBHOOK_URL}}" \ 
+          curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}" \ 
           -H "Content-Type: application/json" \
           -H "x-webhook-secret: ${{ secrets.N8N_WEBHOOK_SECRET }}" \
           -d '{
@@ -35,5 +35,5 @@ jobs:
            "repo": "${{ github.repository }}",
            "branch": "${{ github.ref_name }}",
            "commit": "${{ github.sha }}",
-           "actor": "${{ github.actor }}",
+           "actor": "${{ github.actor }}"
           }'
